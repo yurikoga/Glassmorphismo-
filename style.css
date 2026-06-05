@@ -1,0 +1,189 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#ff5f6d,#ff7a7a);
+}
+
+/* HERO */
+.hero{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+/* CARD GRANDE IGUAL DA IMAGEM */
+.card{
+    width:100%;
+    max-width:1250px;
+    height:600px; /* 🔥 altura fixa igual visual */
+    padding:40px 60px;
+    border-radius:25px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 30px 60px rgba(0,0,0,0.15);
+    position:relative;
+    overflow:hidden;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:20px;
+    font-weight:600;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li{
+    font-size:14px;
+    color:#333;
+    cursor:pointer;
+}
+
+/* AUTH */
+.auth{
+    display:flex;
+    gap:10px;
+}
+
+.auth button{
+    padding:8px 18px;
+    border:none;
+    border-radius:20px;
+    font-size:13px;
+    cursor:pointer;
+}
+
+.login{
+    background: rgba(255,255,255,0.4);
+}
+
+.register{
+    background:#ff5f6d;
+    color:#fff;
+}
+
+/* CONTENT */
+.content{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-top:80px;
+    height:100%;
+}
+
+/* TEXTO */
+.text{
+    max-width:480px;
+}
+
+.text h1{
+    font-size:40px;
+    font-weight:600;
+    line-height:1.4;
+    margin-bottom:20px;
+}
+
+.text p{
+    font-size:14px;
+    color:#444;
+}
+
+/* PLAY (POSIÇÃO EXATA DIREITA EMBAIXO) */
+.play{
+    position:absolute;
+    right:60px;
+    bottom:40px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.play .line{
+    width:50px;
+    height:2px;
+    background:#000;
+}
+
+.play span{
+    font-size:14px;
+}
+
+.play .icon{
+    width:38px;
+    height:38px;
+    border:2px solid #000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:6px;
+}
+
+/* 🔥 CÍRCULOS DE FUNDO IGUAIS */
+.card::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,255,255,0.2);
+    border-radius:50%;
+    top:-150px;
+    left:-150px;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(255,255,255,0.15);
+    border-radius:50%;
+    bottom:-120px;
+    right:-120px;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+    .card{
+        height:auto;
+        padding:30px;
+    }
+
+    .content{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .play{
+        position:static;
+    }
+
+    nav ul{
+        display:none;
+    }
+}
